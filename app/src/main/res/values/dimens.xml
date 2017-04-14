@@ -1,0 +1,188 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <!-- 常用字体大小 ts = text_size -->
+    <dimen name="gjj_ts_smallest">11dp</dimen>
+    <dimen name="gjj_ts_smaller">12dp</dimen>
+    <dimen name="gjj_ts_small">13dp</dimen>
+    <dimen name="gjj_ts_normal">14dp</dimen>
+    <dimen name="gjj_ts_big">15dp</dimen>
+    <dimen name="gjj_ts_bigger">16dp</dimen>
+    <dimen name="gjj_ts_large">17dp</dimen>
+    <dimen name="gjj_ts_larger">18dp</dimen>
+    <dimen name="gjj_ts_huge">20dp</dimen>
+
+    <!-- 公共尺寸 -->
+    <dimen name="gjj_common_divier_height">12dp</dimen>
+    <dimen name="gjj_divider_margin">5dp</dimen>
+    <dimen name="gjj_default_margin">10dp</dimen>
+    <dimen name="gjj_text_entry_size">12dp</dimen>
+    <dimen name="gjj_text_entry_size_2">13dp</dimen>
+    <dimen name="progressbar_height">3dp</dimen>
+    <dimen name="gjj_toolbar_title_size">15dp</dimen>
+    <dimen name="gjj_toolbar_title_padding">13dp</dimen>
+    <dimen name="gjj_banner_default_height">84dp</dimen>
+
+    <!-- 城市选择 -->
+    <dimen name="gjj_city_choose_divier_height">11.5dp</dimen>
+    <dimen name="gjj_city_choose_margin_left">15dp</dimen>
+    <dimen name="gjj_city_choose_item_height">45dp</dimen>
+    <dimen name="gjj_city_choose_header_height">20dp</dimen>
+    <dimen name="gjj_city_choose_header_size">13dp</dimen>
+    <dimen name="gjj_city_choose_sidebar_width">25dp</dimen>
+    <dimen name="gjj_city_choose_sidebar_padding">15dp</dimen>
+
+    <!-- switchTitle -->
+    <dimen name="gjj_switch_title_height">46dp</dimen>
+    <dimen name="gjjSwitchTitleTxtSize">17dp</dimen>
+    <dimen name="gjjSwitchTitleLineHeight">3dp</dimen>
+    <dimen name="gjjSwitchTitleTabsPadding">20dp</dimen>
+    <dimen name="gjjShadowHeight">6dp</dimen>
+    <dimen name="gjjShadowHeightReverse">-6dp</dimen>
+
+    <!-- 用户中心 -->
+    <dimen name="gjj_user_center_photo_item_height">93dp</dimen>
+    <dimen name="gjj_user_center_head_photo_height">74dp</dimen>
+    <dimen name="gjj_user_center_photo_height">58dp</dimen>
+    <dimen name="gjj_user_center_photo_item_padding_right">20dp</dimen>
+    <dimen name="gjj_user_center_item_height">46dp</dimen>
+    <dimen name="gjj_user_center_padding_left">14dp</dimen>
+    <dimen name="gjj_user_center_item_primary_size">16dp</dimen>
+    <dimen name="gjj_user_center_item_second_size">14dp</dimen>
+    <dimen name="gjj_user_center_item_desc_size">11dp</dimen>
+    <dimen name="gjj_user_center_item_icon_width">18dp</dimen>
+    <dimen name="gjj_about_normal_divier_height">15dp</dimen>
+    <dimen name="gjj_user_center_list_padding">15dp</dimen>
+
+    <!-- 照片选择框 -->
+    <dimen name="gjj_photo_choose_dialog_padding_left">15dp</dimen>
+    <dimen name="gjj_photo_choose_dialog_title_size">17dp</dimen>
+    <dimen name="gjj_photo_choose_dialog_content_size">16dp</dimen>
+
+    <!-- 登录 -->
+    <dimen name="gjj_login_submit_size">18dp</dimen>
+    <dimen name="gjj_login_submit_height">44dp</dimen>
+    <dimen name="gjj_login_submit_margin">12dp</dimen>
+    <dimen name="gjj_login_desc_size">14dp</dimen>
+    <dimen name="gjj_login_item_height">45dp</dimen>
+    <dimen name="gjj_login_normal_size">15dp</dimen>
+    <dimen name="gjj_login_second_size">12.5dp</dimen>
+    <dimen name="gjj_login_sendcode_size">12dp</dimen>
+    <dimen name="gjj_add_account_title_size">16dp</dimen>
+    <dimen name="gjj_add_account_title_center_size">16dp</dimen>
+    <dimen name="gjj_add_account_title_padding">13dp</dimen>
+
+    <!-- 提款指南 -->
+    <dimen name="gjj_extract_guide_head_height">139dp</dimen>
+    <dimen name="gjj_extract_guide_head_desc_size">12dp</dimen>
+    <dimen name="gjj_extract_guide_item_height">46dp</dimen>
+    <dimen name="gjj_extract_guide_item_size">16dp</dimen>
+    <dimen name="gjj_extract_guide_padding_left">14dp</dimen>
+    <dimen name="gjj_extract_guide_padding_right">9dp</dimen>
+    <dimen name="gjj_extract_guide_head_size">29dp</dimen>
+    <dimen name="gjj_extract_calc_item_height">46dp</dimen>
+    <dimen name="gjj_extract_calc_split_height">40dp</dimen>
+    <dimen name="gjj_extract_calc_padding">13dp</dimen>
+    <dimen name="gjj_extract_calc_normal_size">15dp</dimen>
+
+    <!-- 贷款指南 -->
+    <dimen name="gjj_loan_guide_head_height">139dp</dimen>
+    <dimen name="gjj_loan_guide_head_desc_size">12dp</dimen>
+    <dimen name="gjj_loan_guide_item_height">46dp</dimen>
+    <dimen name="gjj_loan_guide_item_size">16dp</dimen>
+    <dimen name="gjj_loan_guide_padding_left">14dp</dimen>
+    <dimen name="gjj_loan_guide_padding_right">9dp</dimen>
+    <dimen name="gjj_loan_guide_head_size">29dp</dimen>
+    <dimen name="gjj_loan_calc_item_height">46dp</dimen>
+    <dimen name="gjj_loan_calc_padding">14dp</dimen>
+    <dimen name="gjj_loan_calc_normal_size">15dp</dimen>
+    <dimen name="gjj_loan_calc_split_height">40dp</dimen>
+    <dimen name="gjj_loan_calc_button_split">10dp</dimen>
+    <dimen name="gjj_loan_calc_page_padding_bottom">20dp</dimen>
+    <dimen name="gjj_loan_calc_footer_desc_size">12dp</dimen>
+
+    <!-- 资讯、政策 -->
+    <dimen name="gjj_policy_news_padding">11.5dp</dimen>
+    <dimen name="gjj_policy_news_top_padding">12.5dp</dimen>
+    <dimen name="gjj_policy_news_primary_size">14dp</dimen>
+    <dimen name="gjj_policy_news_primary_size_2">14.5dp</dimen>
+    <dimen name="gjj_policy_news_second_size">11.5dp</dimen>
+    <dimen name="gjj_policy_news_second_size_2">13dp</dimen>
+
+    <!--首页-->
+    <dimen name="gjj_top_query">15dp</dimen>
+    <dimen name="gjj_nb_title">15dp</dimen>
+    <dimen name="gjj_nb_addr">13dp</dimen>
+    <dimen name="gjj_location_text_size">16.5dp</dimen>
+    <dimen name="gjj_home_big_entry_icon_height">35dp</dimen>
+    <dimen name="gjj_home_entry_icon_height">24dp</dimen>
+    <dimen name="gjj_home_header_height">170dp</dimen>
+    <dimen name="gjj_home_entry_item_height">80dp</dimen>
+    <dimen name="gjj_home_house_top">42.9dp</dimen>
+    <dimen name="gjj_home_house_containor_height">97.9dp</dimen>
+    <dimen name="gjj_home_house_containor_promise_height">114.8dp</dimen>
+    <dimen name="gjj_home_house_content_height">59.8dp</dimen>
+    <dimen name="gjj_home_house_content_eye_height">5.5dp</dimen>
+    <dimen name="gjj_home_house_content_mouse_height">3.3dp</dimen>
+
+    <!-- 贷款计算器 -->
+    <dimen name="gjj_loan_calculator_item_height">46dp</dimen>
+    <dimen name="gjj_loan_calculator_padding">17.5dp</dimen>
+    <dimen name="gjj_loan_calculator_title_size">14.2dp</dimen>
+    <dimen name="gjj_loan_calculator_content_size">16dp</dimen>
+
+    <!-- 公积金详情 -->
+    <dimen name="gjj_detail_title_size">13dp</dimen>
+    <dimen name="gjj_detail_item_header_padding">15dp</dimen>
+    <dimen name="gjj_detail_item_header_size">15dp</dimen>
+    <dimen name="gjj_detail_item_size">13dp</dimen>
+
+    <dimen name="gjj_account_margin">20dp</dimen>
+
+    <!-- 缴存 -->
+    <dimen name="gjj_payment_item_height">46.5dp</dimen>
+    <dimen name="gjj_payment_item_tip_height">32dp</dimen>
+    <dimen name="gjj_payment_item_size">16dp</dimen>
+    <dimen name="gjj_payment_item_text_split">6.25dp</dimen>
+    <dimen name="gjj_payment_item_tip_size">12.5dp</dimen>
+    <dimen name="gjj_payment_item_padding">14.5dp</dimen>
+    <dimen name="gjj_payment_home_inner_padding">9dp</dimen>
+    <dimen name="gjj_payment_home_normal_margin">12dp</dimen>
+    <dimen name="gjj_payment_record_item_height">85dp</dimen>
+    <dimen name="gjj_payment_record_item_normal_size">12.5dp</dimen>
+    <dimen name="gjj_payment_record_item_large_size">25dp</dimen>
+    <dimen name="gjj_payment_detail_item_height">45dp</dimen>
+    <dimen name="gjj_payment_detail_item_padding">14.5dp</dimen>
+    <dimen name="gjj_payment_detail_item_size">15dp</dimen>
+
+    <!-- 征信 -->
+    <dimen name="gjj_credit_item_height">46.5dp</dimen>
+    <dimen name="gjj_credit_icon_height">18dp</dimen>
+    <dimen name="gjj_credit_item_padding">14dp</dimen>
+    <dimen name="gjj_credit_item_size">16dp</dimen>
+    <dimen name="gjj_credit_item_second_size">14dp</dimen>
+    <dimen name="gjj_credit_item_small_size">13dp</dimen>
+    <dimen name="gjj_credit_item_radio_height">36dp</dimen>
+    <dimen name="gjj_credit_item_radio_padding">10dp</dimen>
+
+    <!-- 社区 -->
+    <dimen name="gjj_forum_item_title_size">18dp</dimen>
+    <dimen name="gjj_forum_item_left_padding">13dp</dimen>
+    <dimen name="gjj_forum_item_top_padding">17.5dp</dimen>
+    <dimen name="gjj_forum_item_bottom_padding">21dp</dimen>
+    <dimen name="gjj_forum_item_top_split">8dp</dimen>
+    <dimen name="gjj_forum_item_top_split_2">9dp</dimen>
+    <dimen name="gjj_forum_item_size">15dp</dimen>
+    <dimen name="gjj_forum_item_second_size">12.5dp</dimen>
+    <dimen name="gjj_forum_item_small_size">11.5dp</dimen>
+    <dimen name="gjj_forum_item_name_size">11dp</dimen>
+    <dimen name="gjj_forum_item_time_size">10dp</dimen>
+    <dimen name="gjj_forum_commit_item_size">13.5dp</dimen>
+    <dimen name="gjj_forum_head_photo_height">27dp</dimen>
+
+    <dimen name="gjj_message_talk">15dp</dimen>
+    <dimen name="gjj_emoji_size">28dp</dimen>
+</resources>

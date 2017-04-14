@@ -17,28 +17,33 @@
         android:src="@mipmap/ic_launcher"
         app:rippleColor="@color/colorPrimaryDark" />
 
-    <LinearLayout
+    <com.caiyi.dailywork.ui.customview.FormInputView
+        android:id="@+id/name_input"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
-        <EditText
-            android:id="@+id/input_edittxt"
-            android:textSize="15dp"
-            android:gravity="center_vertical"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:background="@color/gjj_white"
-            android:layout_height="40dp" />
-        <ImageView
-            android:id="@+id/iv_clear_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:padding="10dp"
-            android:src="@mipmap/clear_icon"
-            android:visibility="invisible"
-            />
-    </LinearLayout>
+        android:layout_height="50dp">
+
+    </com.caiyi.dailywork.ui.customview.FormInputView>
+
+    <com.caiyi.dailywork.ui.customview.FormInputView
+        android:id="@+id/card_input"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+    </com.caiyi.dailywork.ui.customview.FormInputView>
+
+    <TextView
+        android:id="@+id/credit_account_register"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/gjj_login_submit_height"
+        android:layout_marginBottom="22.5dp"
+        android:layout_marginLeft="@dimen/gjj_login_submit_margin"
+        android:layout_marginRight="@dimen/gjj_login_submit_margin"
+        android:layout_marginTop="22.5dp"
+        android:background="@drawable/gjj_login_sendcode_disabled"
+        android:gravity="center"
+        android:text="下一步"
+        android:textColor="@color/gjj_login_sendcode_disabled_color"
+        android:textSize="@dimen/gjj_login_submit_size" />
 
 
 

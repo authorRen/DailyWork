@@ -4,4 +4,9 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="gjj_white">#FFFFFFFF</color>
+
+    <color name="gjj_text_primary">#ff363f46</color>
+    <color name="gjj_text_second">#ffa3a6a8</color>
+    <color name="gjj_login_sendcode_disabled_color">#c6ccd0</color>
+    <color name="gjj_text_green">#ff2ecc71</color>
 </resources>
