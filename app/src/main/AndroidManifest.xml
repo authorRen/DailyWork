@@ -16,7 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".compant.FloatingActivity"></activity>
+        <activity android:name=".compant.FloatingActivity" />
+        <activity android:name=".compant.SpannedActivity"></activity>
     </application>
 
 </manifest>

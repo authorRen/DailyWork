@@ -3,4 +3,5 @@
     <string name="resolution">手机屏幕分辨率为：</string>
     <string name="pressme">按我获分辨率</string>
     <string name="floating_action_button">跳转悬浮按钮界面</string>
+    <string name="floating_spannable_String">跳转span</string>
 </resources>

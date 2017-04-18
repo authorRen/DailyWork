@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.caiyi.dailywork.R;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends BaseActivity implements View.OnClickListener{
 
     private TextView tvResolution;
     private Button btnPress;
@@ -22,6 +22,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initView();
+
+        setViewClickListeners(R.id.btn_span);
 
     }
 
@@ -40,7 +42,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 getResolution();
                 break;
             case R.id.btn_floating:
-                startActivity(new Intent(this,FloatingActivity.class));
+                openActivity(FloatingActivity.class);
+                break;
+            case R.id.btn_span:
+                openActivity(SpannedActivity.class);
                 break;
             default:
                 break;
