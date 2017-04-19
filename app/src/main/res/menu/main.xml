@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/item_tip"
+        android:orderInCategory="1"
+        android:title="提示"/>
+    <item
+        android:id="@+id/item_menu"
+        android:orderInCategory="2"
+        android:title="菜单"/>
+    <item
+        android:id="@+id/item_shop"
+        android:orderInCategory="3"
+        android:title="购物"/>
+</menu>

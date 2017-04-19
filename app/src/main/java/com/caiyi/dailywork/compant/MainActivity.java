@@ -23,7 +23,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         setContentView(R.layout.activity_main);
         initView();
 
-        setViewClickListeners(R.id.btn_span);
+        setViewClickListeners(R.id.btn_span, R.id.btn_toolbar);
 
     }
 
@@ -46,6 +46,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
                 break;
             case R.id.btn_span:
                 openActivity(SpannedActivity.class);
+                break;
+            case R.id.btn_toolbar:
+                openActivity(ToolbarActivity.class);
                 break;
             default:
                 break;
