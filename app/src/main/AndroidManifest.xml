@@ -20,8 +20,10 @@
         <activity android:name=".compant.SpannedActivity" />
         <activity
             android:name=".compant.ToolbarActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            ></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".compant.DiscoveryActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>

@@ -13,7 +13,6 @@ import com.caiyi.dailywork.R;
 public class MainActivity extends BaseActivity implements View.OnClickListener{
 
     private TextView tvResolution;
-    private Button btnPress;
     /** 获取手机屏幕分辨率相关类*/
     private DisplayMetrics dm;
 
@@ -23,16 +22,13 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         setContentView(R.layout.activity_main);
         initView();
 
-        setViewClickListeners(R.id.btn_span, R.id.btn_toolbar);
+        setViewClickListeners(R.id.btn_press, R.id.btn_span, R.id.btn_toolbar, R.id.btn_floating, R.id.btn_discovery);
 
     }
 
     private void initView() {
         tvResolution = (TextView) findViewById(R.id.tv_resolution);
-        btnPress = (Button) findViewById(R.id.btn_press);
-        btnPress.setOnClickListener(this);
 
-        findViewById(R.id.btn_floating).setOnClickListener(this);
     }
 
     @Override
@@ -49,6 +45,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
                 break;
             case R.id.btn_toolbar:
                 openActivity(ToolbarActivity.class);
+                break;
+            case R.id.btn_discovery:
+                openActivity(DiscoveryActivity.class);
                 break;
             default:
                 break;
