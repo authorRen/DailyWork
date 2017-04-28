@@ -10,4 +10,5 @@
     <color name="gjj_login_sendcode_disabled_color">#c6ccd0</color>
     <color name="gjj_text_green">#ff2ecc71</color>
     <color name="common_title_color">#777777</color>
+    <color name="transparent">#00000000</color>
 </resources>

@@ -35,7 +35,7 @@ public class DiscoveryActivity extends BaseActivity {
 
     private List<String> initData() {
         List<String> data = new ArrayList<String>();
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 100; i++) {
             data.add("测试数据：" + i);
         }
         return data;
