@@ -24,6 +24,13 @@
         <activity
             android:name=".compant.DiscoveryActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
+        静态注册广播接收器
+        <receiver android:name=".compant.MyReciver">
+            <intent-filter>
+                <action android:name="com.intent.action.MY_RECIVER"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
