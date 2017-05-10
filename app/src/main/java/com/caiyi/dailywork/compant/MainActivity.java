@@ -34,7 +34,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
 
         setViewClickListeners(R.id.btn_press, R.id.btn_span,
                 R.id.btn_toolbar, R.id.btn_floating, R.id.btn_discovery,
-                R.id.btn_broadcast, R.id.btn_notification);
+                R.id.btn_broadcast, R.id.btn_notification, R.id.btn_recycle);
 
     }
 
@@ -78,6 +78,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
             case R.id.btn_notification:
                 sendNotification();
                 break;
+            case R.id.btn_recycle:
+                openActivity(RecycleActivity.class);
             default:
                 break;
         }

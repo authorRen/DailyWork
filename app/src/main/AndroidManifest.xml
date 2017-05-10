@@ -24,6 +24,8 @@
         <activity
             android:name=".compant.DiscoveryActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".compant.RecycleActivity"/>
         静态注册广播接收器
         <receiver android:name=".compant.MyReciver">
             <intent-filter>
