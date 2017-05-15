@@ -2,7 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.caiyi.dailywork">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
+        android:name=".compant.DialyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -26,6 +29,9 @@
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".compant.RecycleActivity"/>
+        <activity
+            android:name=".compant.BannerActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
         静态注册广播接收器
         <receiver android:name=".compant.MyReciver">
             <intent-filter>
