@@ -35,7 +35,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         setViewClickListeners(R.id.btn_press, R.id.btn_span,
                 R.id.btn_toolbar, R.id.btn_floating, R.id.btn_discovery,
                 R.id.btn_broadcast, R.id.btn_notification, R.id.btn_recycle,
-                R.id.btn_banner);
+                R.id.btn_banner, R.id.btn_picture);
 
     }
 
@@ -84,6 +84,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
                 break;
             case R.id.btn_banner:
                 openActivity(BannerActivity.class);
+                break;
+            case R.id.btn_picture:
+                openActivity(PictureActivity.class);
                 break;
             default:
                 break;

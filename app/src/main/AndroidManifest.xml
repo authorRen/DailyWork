@@ -32,6 +32,9 @@
         <activity
             android:name=".compant.BannerActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".compant.PictureActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
         静态注册广播接收器
         <receiver android:name=".compant.MyReciver">
             <intent-filter>
