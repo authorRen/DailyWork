@@ -87,6 +87,12 @@
                 android:layout_height="wrap_content"
                 android:text="数字动态增加" />
 
+            <Button
+                android:id="@+id/btn_shape"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Shape" />
+
         </LinearLayout>
     </ScrollView>
 

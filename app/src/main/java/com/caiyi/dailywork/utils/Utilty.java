@@ -23,4 +23,16 @@ public class Utilty {
     public static SharedPreferences getUserInfoSp() {
         return DialyApplication.getmAppContext().getSharedPreferences(AppConfig.SHARED_FILE_NAME, Context.MODE_PRIVATE);
     }
+
+    /**
+     * dip to px
+     *
+     * @param context context
+     * @param dpValue dp
+     * @return px
+     */
+    public static int dip2px(Context context, float dpValue) {
+        final float scale = context.getResources().getDisplayMetrics().density;
+        return (int) (dpValue * scale + 0.5f); // SUPPRESS CHECKSTYLE
+    }
 }
