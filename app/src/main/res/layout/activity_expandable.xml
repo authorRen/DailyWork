@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/common_header"/>
+
+    <Button
+        android:id="@+id/updateData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@color/gjj_divider"
+        android:layout_gravity="center"
+        android:text="刷新数据"/>
+
+    <ExpandableListView
+        android:id="@+id/ex_listView"
+        android:layout_margin="5dp"
+        android:fadingEdge="none"
+        android:dividerHeight="0dp"
+        android:clipToPadding="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:headerDividersEnabled="true"
+        android:footerDividersEnabled="false"/>
+
+
+</LinearLayout>

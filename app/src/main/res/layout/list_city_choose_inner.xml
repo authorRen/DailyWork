@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/chose_item"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/gjj_city_choose_item_height"
+        android:background="@drawable/gjj_normal_selector"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="22dp"
+        android:textColor="@color/gjj_city_support_color"
+        android:textSize="@dimen/gjj_top_query"
+        />
+    <!--<View-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="2px"-->
+        <!--android:layout_marginLeft="20dp"-->
+        <!--android:background="@color/gjj_divider"-->
+        <!--/>-->
+</LinearLayout>
