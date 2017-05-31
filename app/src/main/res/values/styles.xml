@@ -14,4 +14,14 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <declare-styleable name="WheelView">
+        <attr name="wvAllowCycle" format="boolean"/>
+        <attr name="wvNormalColor" format="color"/>
+        <attr name="wvActiveColor" format="color"/>
+        <attr name="wvTextSize" format="dimension"/>
+        <attr name="wvSelOffset" format="dimension"/>
+        <attr name="wvItemHeight" format="dimension"/>
+        <attr name="wvData" format="string"/>
+    </declare-styleable>
+
 </resources>

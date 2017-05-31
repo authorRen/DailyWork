@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
+
+    <Button
+        android:id="@+id/btn_getTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="获取系统时间"/>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <com.caiyi.dailywork.ui.WheelView
+        android:id="@+id/wv_data"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        app:wvTextSize="20dp"
+        app:wvItemHeight="40dp"
+        app:wvData="31"
+        android:layout_height="200dp" />
+
+    <com.caiyi.dailywork.ui.WheelView
+        android:id="@+id/wv_hour"
+        android:layout_width="80dp"
+        android:layout_height="200dp"
+        app:wvItemHeight="40dp"
+        app:wvData="23"
+        app:wvTextSize="20dp"/>
+
+    <com.caiyi.dailywork.ui.WheelView
+        android:id="@+id/wv_minute"
+        android:layout_width="80dp"
+        android:layout_height="200dp"
+        app:wvItemHeight="40dp"
+        app:wvData="59"
+        app:wvTextSize="20dp"/>
+
+</LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_choose"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    
+
+</LinearLayout>

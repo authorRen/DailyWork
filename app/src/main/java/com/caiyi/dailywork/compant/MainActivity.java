@@ -1,5 +1,6 @@
 package com.caiyi.dailywork.compant;
 
+import android.app.AlarmManager;
 import android.app.ExpandableListActivity;
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -17,13 +18,13 @@ import android.widget.TextView;
 
 import com.caiyi.dailywork.R;
 
+import java.util.Date;
+
 public class MainActivity extends BaseActivity implements View.OnClickListener{
 
     private TextView tvResolution;
     /** 获取手机屏幕分辨率相关类*/
     private DisplayMetrics dm;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,12 +34,38 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
 
 //        rigisterBroadCast();
 
+        openTimeService();
+
+//        openService();
+
         setViewClickListeners(R.id.btn_press, R.id.btn_span,
                 R.id.btn_toolbar, R.id.btn_floating, R.id.btn_discovery,
                 R.id.btn_broadcast, R.id.btn_notification, R.id.btn_recycle,
                 R.id.btn_banner, R.id.btn_picture, R.id.btn_shape, R.id.btn_glide,
-                R.id.btn_ExpandableListView);
+                R.id.btn_ExpandableListView, R.id.btn_Demo);
 
+    }
+
+    /**
+     * 启动实时监听时间变化的服务
+     */
+    private void openTimeService() {
+        Intent intent = new Intent(this, TimeService.class);
+        startService(intent);
+    }
+
+    /**
+     * 开启定时发送通知的服务
+     */
+    private void openService() {
+        Intent intent = new Intent(this, PushService.class);
+        intent.setAction("NOTIFICATION");
+        PendingIntent pendingIntent = PendingIntent.getService(this, 0, intent, 0);
+        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+        int type = AlarmManager.RTC_WAKEUP;
+        long triggerAtMillis  = System.currentTimeMillis() + 10 * 1000;
+        long intervalMillis = 10 * 1000;
+        alarmManager.setInexactRepeating(type, triggerAtMillis, intervalMillis, pendingIntent);
     }
 
     private void initView() {
@@ -99,6 +126,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
             case R.id.btn_ExpandableListView:
                 openActivity(ExpandableListViewActivity.class);
                 break;
+            case R.id.btn_Demo:
+                openActivity(DemoActivity.class);
             default:
                 break;
         }
@@ -108,7 +137,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     /**
      * 发送通知
      */
-    private void sendNotification() {
+    public void sendNotification() {
         NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         int icon = R.drawable.ic_launcher;//通知图标
         Intent openIntent = new Intent(this, DiscoveryActivity.class);
