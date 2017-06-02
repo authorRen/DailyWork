@@ -21,7 +21,7 @@
         <attr name="wvTextSize" format="dimension"/>
         <attr name="wvSelOffset" format="dimension"/>
         <attr name="wvItemHeight" format="dimension"/>
-        <attr name="wvData" format="string"/>
+        <attr name="wvData" format="reference"/>
     </declare-styleable>
 
 </resources>

@@ -64,10 +64,10 @@
                 android:text="发送广播" />
 
             <Button
-                android:id="@+id/btn_notification"
+                android:id="@+id/btn_wheelTime"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="发送通知" />
+                android:text="仿ios滚轮时间" />
 
             <Button
                 android:id="@+id/btn_recycle"

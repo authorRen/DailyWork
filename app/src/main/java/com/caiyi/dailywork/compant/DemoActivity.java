@@ -2,24 +2,20 @@ package com.caiyi.dailywork.compant;
 
 
 import android.app.AlarmManager;
-import android.app.Notification;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.NotificationCompat;
+import android.provider.Settings;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 import com.caiyi.dailywork.R;
 import com.caiyi.dailywork.ui.WheelView;
-import com.caiyi.dailywork.utils.SPUtil;
+import com.caiyi.dailywork.utils.NotificationsUtils;
 
-import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
+import java.util.List;
 
 /**
  * Created by RZQ on 2017/5/26.
@@ -27,86 +23,112 @@ import java.util.Date;
 
 public class DemoActivity extends BaseActivity {
 
-    private TextView mTvTime;
-    private Button mBtnGetTime;
     private WheelView mWvData;
     private WheelView mWvHour;
-    private WheelView mWvMinute;
+    private TextView mSystem;
+    private TextView mLocal;
 
-    private String mData;
-    private String mHour;
-    private String mMinute;
+    private boolean enabled;
 
-    private TextView mTvChoose;
+    private List<String> mDay = new ArrayList<>();
+    private List<String> mHour = new ArrayList<>();
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.avtivity_demo);
 
+        getPermission();
+        initToolbar();
         initView();
+        initTime();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (enabled) {
+            //通知权限打开状态
+            mSystem.setVisibility(View.GONE);
+            mLocal.setVisibility(View.VISIBLE);
+        } else {
+            //通知权限关闭状态
+            mSystem.setVisibility(View.VISIBLE);
+            mLocal.setVisibility(View.GONE);
+        }
+    }
+
+    /**
+     * 获取通知栏权限是否开启
+     */
+    private void getPermission() {
+        enabled = NotificationsUtils.isNotificationEnabled(this);
+    }
+
+    private void initToolbar() {
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("公积金账单提醒");
+        setSupportActionBar(toolbar);
     }
 
     private void initView() {
-        mTvTime = (TextView) findViewById(R.id.tv_time);
-        mTvChoose = (TextView) findViewById(R.id.tv_choose);
         mWvData = (WheelView) findViewById(R.id.wv_data);
+        for (int i = 1; i <= 28; i++) {
+            mDay.add(String.valueOf(i));
+        }
+        mWvData.updateData(mDay);
         mWvHour = (WheelView) findViewById(R.id.wv_hour);
-        mWvMinute = (WheelView) findViewById(R.id.wv_minute);
-        mBtnGetTime = (Button) findViewById(R.id.btn_getTime);
-        mBtnGetTime.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getSystemTime();
+        for (int i = 0; i <= 24; i++) {
+            mHour.add(String.valueOf(i) + ":00");
+        }
+        mWvHour.updateData(mHour);
+        mSystem = (TextView) findViewById(R.id.tv_system);
+        mLocal = (TextView) findViewById(R.id.tv_local);
 
-                getChooseTime();
-
-                long time = System.currentTimeMillis();
-
-                Calendar mCalendar = Calendar.getInstance();
-
-                mCalendar.setTimeInMillis(time);
-
-                int mHour = mCalendar.get(Calendar.MINUTE);
-
-                showToast(mHour+"");
-
-            }
-
-        });
+        setViewClickListeners(R.id.btn_sure, R.id.tv_system);
     }
 
-    private void getSystemTime() {
-        long time = System.currentTimeMillis();
-
-        Date date = new Date(time);
-
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss");
-
-        String format = simpleDateFormat.format(date);
-
-        mTvTime.setText(format);
-
+    /**
+     * 设置默认显示的时间
+     */
+    private void initTime() {
+        mWvData.setCurrentPos(26); //默认27号
+        mWvHour.setCurrentPos(17); //默认下午5点
     }
 
-    private void getChooseTime() {
-        mData = mWvData.getCurrentText();
-        mHour = mWvHour.getCurrentText();
-        mMinute = mWvMinute.getCurrentText();
-
-        mTvChoose.setText(mData + "日" + mHour + "小时" + mMinute + "分钟");
-
-//        SPUtil.putString("data", mData);
-//        SPUtil.putString("hour", mHour);
-//        SPUtil.putString("minute", mMinute);
-
-        Intent intent = new Intent(this, DateChangeReceiver.class);
-        intent.putExtra("data", mData);
-        intent.putExtra("hour", mHour);
-        intent.putExtra("minute", mMinute);
-        intent.setAction(Intent.ACTION_TIME_TICK);
-        sendBroadcast(intent);
-
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.btn_sure:
+                setAlaem();
+                break;
+            case R.id.tv_system:
+                skipSystem();
+                break;
+            default:
+                break;
+        }
     }
 
+    /**
+     * 跳转系统界面
+     */
+    private void skipSystem() {
+        Intent intent = new Intent(Settings.ACTION_SETTINGS);
+        startActivity(intent);
+    }
+
+    /**
+     * 获取选中的时间,设置闹钟
+     */
+    private void setAlaem() {
+        String data = mWvData.getCurrentText(); //获取日期
+        String hour = mWvHour.getCurrentText(); //获取小时
+
+        AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+
+
+    }
 }

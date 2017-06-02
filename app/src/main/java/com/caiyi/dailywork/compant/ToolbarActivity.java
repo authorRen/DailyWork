@@ -1,9 +1,13 @@
 package com.caiyi.dailywork.compant;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.caiyi.dailywork.R;
@@ -53,6 +57,30 @@ public class ToolbarActivity extends BaseActivity {
                         break;
                 }
                 return true;
+            }
+        });
+
+        Button mBtnDialog = (Button) findViewById(R.id.btn_dialog);
+        mBtnDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder dialog = new AlertDialog.Builder(ToolbarActivity.this);
+                dialog.setTitle("this is Dialog");
+                dialog.setMessage("Something is important");
+                dialog.setCancelable(false);
+                dialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        showToast("确认选择");
+                    }
+                });
+                dialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        showToast("取消选择");
+                    }
+                });
+                dialog.show();
             }
         });
     }

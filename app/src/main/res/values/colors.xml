@@ -5,6 +5,7 @@
     <color name="colorAccent">#FF4081</color>
     <color name="gjj_white">#FFFFFFFF</color>
     <color name="gjj_black">#000000</color>
+    <color name="gjj_page_bg">#FFF3F7F9</color>
 
     <color name="gjj_text_primary">#ff363f46</color>
     <color name="gjj_text_second">#ffa3a6a8</color>

@@ -1,59 +1,173 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/gjj_page_bg"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tv_time"
+    <include layout="@layout/common_header" />
+
+    <View
         android:layout_width="match_parent"
-        android:layout_height="30dp" />
+        android:layout_height="10dp"
+        android:background="@color/gjj_page_bg" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/gjj_white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:text="公积金账单提醒"
+            android:textColor="@color/gjj_black"
+            android:textSize="@dimen/gjj_ts_larger" />
+
+        <TextView
+            android:id="@+id/tv_system"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:layout_marginRight="10dp"
+            android:textColor="@color/gjj_text_blue"
+            android:text="去开启"/>
+
+        <TextView
+            android:id="@+id/tv_local"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:layout_marginRight="10dp"
+            android:textColor="@color/gjj_text_blue"
+            android:text="通知"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/gjj_page_bg" />
 
 
-    <Button
-        android:id="@+id/btn_getTime"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="获取系统时间"/>
+        android:background="@color/gjj_white"
+        android:orientation="vertical">
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="上下滑动显示日期：" />
 
-    <com.caiyi.dailywork.ui.WheelView
-        android:id="@+id/wv_data"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        app:wvTextSize="20dp"
-        app:wvItemHeight="40dp"
-        app:wvData="31"
-        android:layout_height="200dp" />
+        <android.support.percent.PercentRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <com.caiyi.dailywork.ui.WheelView
-        android:id="@+id/wv_hour"
-        android:layout_width="80dp"
-        android:layout_height="200dp"
-        app:wvItemHeight="40dp"
-        app:wvData="23"
-        app:wvTextSize="20dp"/>
+            <com.caiyi.dailywork.ui.WheelView
+                android:id="@+id/wv_data"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:layout_marginLeft="50dp"
+                app:layout_widthPercent="35%"
+                app:wvItemHeight="55dp"
+                app:wvTextSize="30dp" />
 
-    <com.caiyi.dailywork.ui.WheelView
-        android:id="@+id/wv_minute"
-        android:layout_width="80dp"
-        android:layout_height="200dp"
-        app:wvItemHeight="40dp"
-        app:wvData="59"
-        app:wvTextSize="20dp"/>
+            <com.caiyi.dailywork.ui.WheelView
+                android:id="@+id/wv_hour"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="50dp"
+                app:layout_widthPercent="35%"
+                app:wvItemHeight="55dp"
+                app:wvTextSize="30dp" />
 
-</LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/wv_data"
+                android:layout_centerVertical="true"
+                android:text="每月"
+                android:textColor="@color/gjj_black"
+                android:textSize="18dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@+id/wv_data"
+                android:layout_centerVertical="true"
+                android:text="号"
+                android:textColor="@color/gjj_black"
+                android:textSize="18dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@+id/wv_hour"
+                android:layout_centerVertical="true"
+                android:text="点"
+                android:textColor="@color/gjj_black"
+                android:textSize="18dp" />
+
+        </android.support.percent.PercentRelativeLayout>
+        <!--
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.caiyi.dailywork.ui.WheelView
+                        android:id="@+id/wv_data"
+                        android:layout_width="0dp"
+                        android:layout_height="200dp"
+                        android:layout_weight="1"
+                        app:wvItemHeight="40dp"
+                        app:wvTextSize="30dp" />
+
+                    <com.caiyi.dailywork.ui.WheelView
+                        android:id="@+id/wv_hour"
+                        android:layout_width="0dp"
+                        android:layout_height="200dp"
+                        android:layout_weight="1"
+                        app:wvItemHeight="40dp"
+                        app:wvTextSize="30dp" />
+
+                </LinearLayout>-->
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/gjj_white"
+            android:padding="10dp"
+            android:text="为了你的账单的安全，有鱼公积金管家不会自动帮您获取缴存账单。" />
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_sure"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/bg_ensure"
+        android:text="确定"
+        android:textColor="@color/gjj_white"
+        android:textSize="15dp" />
 
     <TextView
-        android:id="@+id/tv_choose"
+        android:id="@+id/aaa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    
 
 </LinearLayout>

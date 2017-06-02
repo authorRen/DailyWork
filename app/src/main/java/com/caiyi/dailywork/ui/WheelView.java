@@ -105,31 +105,20 @@ public class WheelView extends View implements GestureDetector.OnGestureListener
         mNormalColor = a.getColor(R.styleable.WheelView_wvNormalColor,
                 ContextCompat.getColor(context, R.color.gjj_black));
         mSelectedColor = a.getColor(R.styleable.WheelView_wvActiveColor,
-                ContextCompat.getColor(context, R.color.gjj_text_green));
+                ContextCompat.getColor(context, R.color.gjj_text_blue));
 
         mTextSize = a.getDimensionPixelSize(R.styleable.WheelView_wvTextSize, 30);
         mItemHeight = a.getDimensionPixelSize(R.styleable.WheelView_wvItemHeight, 60);
         mSelOffset = a.getDimensionPixelOffset(R.styleable.WheelView_wvSelOffset,
                 (int) (context.getResources().getDisplayMetrics().density + 0.5f));
 
-//        CharSequence[] data = a.getTextArray(R.styleable.WheelView_wvData);
-        String string = a.getString(R.styleable.WheelView_wvData);
-        int number = Integer.valueOf(string);
-//        if (data != null) {
-//            for (CharSequence cs : data) {
-//                mData.add((String) cs);
-//            }
-//        } else {
-//            for (int i = 1; i <= 12; i++) {
-//                mData.add(String.valueOf(i));
-//            }
-//        }
-        if (number != 0){
-            for (int i = 0; i <= number; i++) {
-                mData.add(String.valueOf(i));
+        CharSequence[] data = a.getTextArray(R.styleable.WheelView_wvData);
+        if (data != null) {
+            for (CharSequence cs : data) {
+                mData.add((String) cs);
             }
-        } else if(number == 31) {
-            for (int i = 1; i <= number; i++) {
+        } else {
+            for (int i = 0; i <= 12; i++) {
                 mData.add(String.valueOf(i));
             }
         }

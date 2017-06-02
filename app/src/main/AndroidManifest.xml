@@ -47,6 +47,9 @@
         <activity
             android:name=".compant.DemoActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".compant.WheelActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
         静态注册广播接收器
         <receiver android:name=".compant.MyReciver">
             <intent-filter>

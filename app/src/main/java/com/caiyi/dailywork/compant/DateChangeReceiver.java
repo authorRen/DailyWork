@@ -25,12 +25,6 @@ class DateChangeReceiver extends BroadcastReceiver {
 
     private static final int NOTIFICATION_FLAG = 1;
 
-    int data;
-
-    int hour;
-
-    int minute;
-
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -38,13 +32,6 @@ class DateChangeReceiver extends BroadcastReceiver {
         if (!intent.getAction().equals(Intent.ACTION_TIME_TICK)) {
             return;
         }
-//        data = Integer.valueOf(SPUtil.getString("data"));
-//        hour = Integer.valueOf(SPUtil.getString("hour"));
-//        minute = Integer.valueOf(SPUtil.getString("minute"));
-
-        data = intent.getIntExtra("data",1);
-        hour = intent.getIntExtra("hour",1);
-        minute = intent.getIntExtra("minute",1);
 
         long time = System.currentTimeMillis();
 
