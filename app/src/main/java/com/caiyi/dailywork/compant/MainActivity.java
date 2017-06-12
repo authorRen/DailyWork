@@ -33,7 +33,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         setContentView(R.layout.activity_main);
         initView();
 
-//        openTimeService();
+        openTimeService();
 
         setViewClickListeners(R.id.btn_press, R.id.btn_span,
                 R.id.btn_toolbar, R.id.btn_floating, R.id.btn_discovery,
@@ -46,10 +46,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     /**
      * 启动实时监听时间变化的服务
      */
-//    private void openTimeService() {
-//        Intent intent = new Intent(this, TimeService.class);
-//        startService(intent);
-//    }
+    private void openTimeService() {
+        Intent intent = new Intent(this, TimeService.class);
+        startService(intent);
+    }
 
     private void initView() {
         tvResolution = (TextView) findViewById(R.id.tv_resolution);
@@ -75,7 +75,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
                 openActivity(DiscoveryActivity.class);
                 break;
             case R.id.btn_broadcast:
-                send();
+                openActivity(CalendarActivity.class);
                 break;
             case R.id.btn_wheelTime:
                 openActivity(WheelActivity.class);
@@ -103,16 +103,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
             default:
                 break;
         }
-
-    }
-
-    /**
-     * 执行发送广播
-     */
-    private void send() {
-        Intent intent = new Intent("com.intent.action.MY_RECIVER");
-        intent.putExtra("data","发送了一个广播");
-        sendBroadcast(intent);
 
     }
 

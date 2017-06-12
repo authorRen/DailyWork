@@ -19,7 +19,7 @@ import java.util.Calendar;
  * Created by RZQ on 2017/5/27.
  */
 
-class DateChangeReceiver extends BroadcastReceiver {
+public class DateChangeReceiver extends BroadcastReceiver {
 
     private static final String TAG = "DateChangeReceiver";
 
@@ -28,24 +28,12 @@ class DateChangeReceiver extends BroadcastReceiver {
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
     public void onReceive(Context context, Intent intent) {
-        Log.i(TAG, "onReceive: 时间发生变化");
-        if (!intent.getAction().equals(Intent.ACTION_TIME_TICK)) {
-            return;
-        }
-
-        long time = System.currentTimeMillis();
-
-        Calendar mCalendar = Calendar.getInstance();
-
-        mCalendar.setTimeInMillis(time);
-
-        int mMinute = mCalendar.get(Calendar.MINUTE);
-
-        int mHour = mCalendar.get(Calendar.HOUR);
-
-        int mDate = mCalendar.get(Calendar.DAY_OF_MONTH);
-
-        if (mMinute == 58 && mHour == 4 && mDate == 31) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.DAY_OF_MONTH, 10);
+        calendar.set(Calendar.HOUR_OF_DAY,10);
+        calendar.set(Calendar.MINUTE, 00);
+        calendar.set(Calendar.SECOND, 00);
+        if (calendar.HOUR_OF_DAY == 10 && calendar.DAY_OF_MONTH == 10 && calendar.MINUTE == 00 && calendar.SECOND == 00 ) {
             Intent startIntent = new Intent(context, MainActivity.class);
             PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, startIntent, 0);
             //通过notification.builder来创建通知，注意API Level
@@ -63,6 +51,7 @@ class DateChangeReceiver extends BroadcastReceiver {
             // 步骤4：通过通知管理器来发起通知。如果id不同，则每click，在status哪里增加一个提示
             manager.notify(NOTIFICATION_FLAG, notification);
         }
+
 
     }
 }

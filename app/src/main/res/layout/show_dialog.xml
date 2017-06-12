@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/bg_white_corner_5dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/dialog_title"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_centerInParent="true"
+            android:text="设置提醒成功"
+            android:gravity="center"
+            android:textColor="@color/gjj_black"
+            android:textSize="25dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gjj_page_bg" />
+
+        <TextView
+            android:id="@+id/set_success"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/gjj_login_submit_height"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@color/gjj_white"
+            android:gravity="center"
+            android:text="确定"
+            android:textSize="25dp"
+            android:textColor="@color/gjj_text_blue"/>
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -16,4 +16,5 @@
     <color name="gjj_text_blue">#ff57a5e2</color>
     <color name="gjj_divider">#ffd5d8d9</color>
     <color name="gjj_city_support_color">#FF363F46</color>
+    <color name="translucent_background">#60000000</color>
 </resources>

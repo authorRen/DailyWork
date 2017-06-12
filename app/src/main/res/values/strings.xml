@@ -6,4 +6,6 @@
     <string name="floating_spannable_String">跳转span</string>
     <string name="btn_toolbar">ToolBar</string>
     <string name="data">31</string>
+    <string name="closeIntroduce">当前您未开启通知权限，为保障不影响您及时了解公积金的重要信息，我们建议您点击开启通知权限！</string>
+    <string name="openIntroduce">设置提醒后，系统会在您设定的时间提醒您获取最新的公积金缴存账单</string>
 </resources>

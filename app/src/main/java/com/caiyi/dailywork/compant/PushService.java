@@ -1,5 +1,6 @@
 package com.caiyi.dailywork.compant;
 
+import android.app.IntentService;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -7,6 +8,7 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.Build;
 import android.os.IBinder;
+import android.support.annotation.IntDef;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.util.Log;
@@ -22,31 +24,31 @@ import java.util.TimerTask;
 
 public class PushService extends Service {
 
-    private static final String TAG = "PushService";
-
-    private static final int NOTIFICATION_ID = 1000;
+    static Timer timer = null;
 
     //清除通知
-    public static void clearAllNotification() {
-        NotificationManager manager = (NotificationManager) MainActivity.getTopActivity()
+    public static void cleanAllNotification() {
+        NotificationManager manager = (NotificationManager) DialyApplication.getmAppContext()
                 .getSystemService(NOTIFICATION_SERVICE);
         manager.cancelAll();
+        if (timer != null) {
+            timer.cancel();
+            timer = null;
+        }
     }
 
     //添加通知
     public static void addNotification(int delayTime, String tickerText, String contentTitle, String contentText) {
-        Intent intent = new Intent(MainActivity.getTopActivity(), PushService.class);
+        Intent intent = new Intent(DialyApplication.getmAppContext(), PushService.class);
         intent.putExtra("delayTime", delayTime);
         intent.putExtra("tickerText", tickerText);
         intent.putExtra("contentTitle", contentTitle);
         intent.putExtra("contentText", contentText);
-        MainActivity.getTopActivity().startService(intent);
+        DialyApplication.getmAppContext().startService(intent);
     }
 
-    @Override
     public void onCreate() {
-        super.onCreate();
-        Log.e(TAG, "addNotification------onCreate");
+        Log.e("addNotification", "===========create=======");
     }
 
     @Nullable
@@ -55,35 +57,39 @@ public class PushService extends Service {
         return null;
     }
 
+    @Override
     public int onStartCommand(final Intent intent, int flags, int startId) {
-        if (intent.getAction().equals("NOTIFICATION")) {
-            new Thread(new Runnable() {
-                @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
-                @Override
-                public void run() {
-                    NotificationManager manager = (NotificationManager) PushService.this.getSystemService(NOTIFICATION_SERVICE);
-                    Intent skip = new Intent(getApplication(), DemoActivity.class);
-                    PendingIntent pendingIntent = PendingIntent.getActivity(getApplication(), 0, skip, 0);
-                    Notification notification = new Notification.Builder(PushService.this)
+        long period = 24 * 60 * 60 * 1000; //24小时一个周期
+        int delay = intent.getIntExtra("delayTime", 0);
+        if (null == timer) {
+            timer = new Timer();
+        }
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                NotificationManager mn= (NotificationManager) PushService.this.getSystemService(NOTIFICATION_SERVICE);
+                Notification.Builder builder = new Notification.Builder(PushService.this);
+                Intent it = new Intent(PushService.this, MainActivity.class);
+                PendingIntent pendingIntent = PendingIntent.getActivity(PushService.this, 0, it, 0);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                    Notification notification = builder.setAutoCancel(true)
+                            .setContentTitle(intent.getStringExtra("contentTitle"))
+                            .setContentText(intent.getStringExtra("contentText"))
+                            .setTicker(intent.getStringExtra("tickerText"))
                             .setSmallIcon(R.drawable.logo)
-                            .setContentTitle("有鱼公积金管家")
-                            .setTicker("你有新消息啦！")
-                            .setContentIntent(pendingIntent)
-                            .setContentText("你的公积金很近没有更新了，点击公积金余额刷新，赶快看一下公积金余额涨了没有吧！")
-                            .setAutoCancel(true)
                             .setDefaults(Notification.DEFAULT_ALL)
                             .build();
-
-                    manager.notify(NOTIFICATION_ID, notification);
+                    mn.notify((int)System.currentTimeMillis(),notification);
                 }
-            }).start();
-        }
+
+            }
+        }, delay, period);
         return super.onStartCommand(intent, flags, startId);
     }
 
     @Override
     public void onDestroy() {
-        Log.e(TAG, "===========destroy=======");
         super.onDestroy();
+        Log.e("addNotification", "===========destroy=======");
     }
 }

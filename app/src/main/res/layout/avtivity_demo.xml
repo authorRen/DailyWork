@@ -38,23 +38,24 @@
             android:textColor="@color/gjj_text_blue"
             android:text="去开启"/>
 
-        <TextView
+        <CheckedTextView
             android:id="@+id/tv_local"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="45dp"
             android:gravity="center_vertical"
+            android:layout_gravity="center_vertical"
             android:layout_marginRight="10dp"
-            android:textColor="@color/gjj_text_blue"
-            android:text="通知"
-            android:visibility="gone"/>
+            android:drawableRight="@drawable/gjj_eye_2"
+           />
 
     </LinearLayout>
 
-    <View
+    <TextView
+        android:id="@+id/tv_introduce"
         android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:background="@color/gjj_page_bg" />
-
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginBottom="10dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -78,7 +79,7 @@
                 android:layout_height="200dp"
                 android:layout_marginLeft="50dp"
                 app:layout_widthPercent="35%"
-                app:wvItemHeight="55dp"
+                app:wvItemHeight="56dp"
                 app:wvTextSize="30dp" />
 
             <com.caiyi.dailywork.ui.WheelView
@@ -88,7 +89,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="50dp"
                 app:layout_widthPercent="35%"
-                app:wvItemHeight="55dp"
+                app:wvItemHeight="56dp"
                 app:wvTextSize="30dp" />
 
             <TextView
@@ -119,30 +120,6 @@
                 android:textSize="18dp" />
 
         </android.support.percent.PercentRelativeLayout>
-        <!--
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <com.caiyi.dailywork.ui.WheelView
-                        android:id="@+id/wv_data"
-                        android:layout_width="0dp"
-                        android:layout_height="200dp"
-                        android:layout_weight="1"
-                        app:wvItemHeight="40dp"
-                        app:wvTextSize="30dp" />
-
-                    <com.caiyi.dailywork.ui.WheelView
-                        android:id="@+id/wv_hour"
-                        android:layout_width="0dp"
-                        android:layout_height="200dp"
-                        android:layout_weight="1"
-                        app:wvItemHeight="40dp"
-                        app:wvTextSize="30dp" />
-
-                </LinearLayout>-->
-
 
         <TextView
             android:layout_width="match_parent"
@@ -163,11 +140,6 @@
         android:text="确定"
         android:textColor="@color/gjj_white"
         android:textSize="15dp" />
-
-    <TextView
-        android:id="@+id/aaa"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
 
 
 </LinearLayout>
