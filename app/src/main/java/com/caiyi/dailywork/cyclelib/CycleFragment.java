@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.view.ViewParent;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -276,6 +277,11 @@ public class CycleFragment extends Fragment implements OnPageChangeListener {
         @Override
         public View instantiateItem(ViewGroup container, final int position) {
             ImageView v = imageViews.get(position);
+            ViewParent vp = v.getParent();
+            if (vp != null) {
+                ViewGroup parent = (ViewGroup) vp;
+                parent.removeView(v);
+            }
             if (mImageCycleViewListener != null) {
                 v.setOnClickListener(new OnClickListener() {
 

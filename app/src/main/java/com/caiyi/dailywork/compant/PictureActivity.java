@@ -9,8 +9,13 @@ import android.widget.Toast;
 
 import com.caiyi.dailywork.R;
 import com.caiyi.dailywork.data.RiseNumber;
+import com.caiyi.dailywork.ui.EasyPickerView;
+
+import java.util.ArrayList;
 
 /**
+ * 数字动态增加
+ *
  * Created by RZQ on 2017/5/18.
  */
 
@@ -23,21 +28,13 @@ public class PictureActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_picture);
         setupViews();
+        initView();
     }
 
     private void setupViews() {
         // 获取到RiseNumberTextView对象
         rnTextView = (TextView) findViewById(R.id.risenumber_textview);
         final RiseNumber riseNumber = new RiseNumber(rnTextView, 1500, 0, (float) 2490.20);
-        // 监听动画播放结束
-//        riseNumber.setOnEndListener(new RiseNumber().EndListener() {
-//
-//            @Override
-//            public void onEndFinish() {
-//                Toast.makeText(PictureActivity.this, "数据增长完毕...",
-//                        Toast.LENGTH_SHORT).show();
-//            }
-//        });
         riseNumber.setOnEndListener(new RiseNumber.EndListener() {
             @Override
             public void onEndFinish() {
@@ -59,5 +56,14 @@ public class PictureActivity extends BaseActivity {
 
             }
         });
+    }
+
+    private void initView() {
+        ArrayList<String> dataList = new ArrayList<>();
+        for (int i = 0; i < 100; i++)
+            dataList.add("" + i);
+
+        EasyPickerView epv = (EasyPickerView) findViewById(R.id.epv);
+        epv.setDataList(dataList);
     }
 }
