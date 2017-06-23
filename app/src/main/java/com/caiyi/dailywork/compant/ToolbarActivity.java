@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.caiyi.dailywork.R;
+import com.caiyi.dailywork.fragment.SetPwdFragment;
 
 public class ToolbarActivity extends BaseActivity {
 
@@ -31,14 +32,9 @@ public class ToolbarActivity extends BaseActivity {
                 finish();
             }
         });
-//        setSupportActionBar(toolbar);
-//        getSupportActionBar().setTitle("");
-//        toolbar.setNavigationIcon(R.mipmap.left_blue_arrow);
         ((TextView) findViewById(R.id.toolbar_title)).setText("首页");
 
         /**菜单的设置 */
-//        ActionMenuView amv = (ActionMenuView) findViewById(R.id.action_menu_view);
-//        getMenuInflater().inflate(R.menu.main, amv.getMenu());
         toolbar.inflateMenu(R.menu.main);
         toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
@@ -81,6 +77,14 @@ public class ToolbarActivity extends BaseActivity {
                     }
                 });
                 dialog.show();
+            }
+        });
+
+        Button mDialog = (Button) findViewById(R.id.btn_dialogFragment);
+        mDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SetPwdFragment.showDialog(getSupportFragmentManager());
             }
         });
     }

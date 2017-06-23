@@ -17,4 +17,19 @@
     <color name="gjj_divider">#ffd5d8d9</color>
     <color name="gjj_city_support_color">#FF363F46</color>
     <color name="translucent_background">#60000000</color>
+
+    <!--进度条颜色-->
+    <integer-array name="gjj_loading_colors">
+        <item>@color/gjj_loading_progress_color_1</item>
+        <item>@color/gjj_loading_progress_color_2</item>
+        <item>@color/gjj_loading_progress_color_3</item>
+    </integer-array>
+
+    <color name="gjj_loading_progress_color_1">#1aa48c</color>
+    <color name="gjj_loading_progress_color_2">#f44e4a</color>
+    <color name="gjj_loading_progress_color_3">#f8af1a</color>
+
+    <!--black-->
+    <color name="black_212121">#212121</color>
+    <color name="black_6c6c6c">#6c6c6c</color>
 </resources>

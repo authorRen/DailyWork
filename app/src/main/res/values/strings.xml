@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">DailyWork</string>
+    <string name="network_not_connected">您的网络未连接，连接后再试^_^</string>
+    <string name="error_toast">出错啦，休息一下再试^_^</string>
     <string name="resolution">手机屏幕分辨率为：</string>
     <string name="pressme">按我获分辨率</string>
     <string name="floating_action_button">跳转悬浮按钮界面</string>
@@ -8,4 +10,6 @@
     <string name="data">31</string>
     <string name="closeIntroduce">当前您未开启通知权限，为保障不影响您及时了解公积金的重要信息，我们建议您点击开启通知权限！</string>
     <string name="openIntroduce">设置提醒后，系统会在您设定的时间提醒您获取最新的公积金缴存账单</string>
+    <string name="kindly_remind">温馨提示</string>
+    <string name="not_remind">暂不设置，退出登录</string>
 </resources>

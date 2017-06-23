@@ -66,13 +66,6 @@ public class BaseActivity extends AppCompatActivity implements View.OnClickListe
     private Dialog mProgressDialog;
     /** local broadcast receiver manager.*/
     private LocalBroadcastManager mLbm;
-    /** login receiver.*/
-    private BroadcastReceiver mLoginReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            onLoginSuccess();
-        }
-    };
 
     @Override
     protected void onResume() {
@@ -162,7 +155,6 @@ public class BaseActivity extends AppCompatActivity implements View.OnClickListe
         removeFromTask(this);
         super.onDestroy();
         dismissDialog();
-        mLbm.unregisterReceiver(mLoginReceiver);
     }
 
     protected void getIntentData(Intent intent) {
