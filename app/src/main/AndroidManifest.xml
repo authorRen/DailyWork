@@ -3,6 +3,7 @@
     package="com.caiyi.dailywork">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:name=".compant.DialyApplication"
@@ -55,6 +56,9 @@
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".compant.CalendarActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".compant.CameraActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
         静态注册广播接收器
         <receiver android:name=".compant.DateChangeReceiver"

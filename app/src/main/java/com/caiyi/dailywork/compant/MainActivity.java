@@ -35,7 +35,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
 
         openTimeService();
 
-        setViewClickListeners(R.id.btn_press, R.id.btn_span,
+        setViewClickListeners(R.id.btn_camera, R.id.btn_span,
                 R.id.btn_toolbar, R.id.btn_floating, R.id.btn_discovery,
                 R.id.btn_broadcast, R.id.btn_wheelTime, R.id.btn_recycle,
                 R.id.btn_banner, R.id.btn_picture, R.id.btn_shape, R.id.btn_glide,
@@ -53,14 +53,15 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
 
     private void initView() {
         tvResolution = (TextView) findViewById(R.id.tv_resolution);
+        getResolution();
 
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.btn_press:
-                getResolution();
+            case R.id.btn_camera:
+                openActivity(CameraActivity.class);
                 break;
             case R.id.btn_floating:
                 openActivity(FloatingActivity.class);

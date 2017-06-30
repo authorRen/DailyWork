@@ -28,10 +28,10 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
-                android:id="@+id/btn_press"
+                android:id="@+id/btn_camera"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/pressme" />
+                android:text="摄像头拍照" />
 
             <Button
                 android:id="@+id/btn_floating"
