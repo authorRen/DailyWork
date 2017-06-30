@@ -1,5 +1,6 @@
 package com.caiyi.dailywork.compant;
 
+import android.animation.ValueAnimator;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.view.GestureDetector;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
@@ -30,6 +32,7 @@ import java.util.Date;
  */
 
 public class CalendarActivity extends BaseActivity {
+
 
     private GestureDetector gestureDetector = null;
     private CalendarAdapter adapter = null;
@@ -79,7 +82,7 @@ public class CalendarActivity extends BaseActivity {
 
 
 
-        setViewClickListeners(R.id.prevMonth, R.id.nextMonth);
+        setViewClickListeners(R.id.prevMonth, R.id.nextMonth, R.id.btn_bright);
     }
 
     private class MyGestureListener extends GestureDetector.SimpleOnGestureListener {
@@ -109,9 +112,32 @@ public class CalendarActivity extends BaseActivity {
             case R.id.prevMonth: // 上一个月
                 enterPrevMonth(gvFlag);
                 break;
+            case R.id.btn_bright:
+                dimBackground(0.2f, 1.0f);
+                break;
             default:
                 break;
         }
+    }
+
+    /**
+     * 调整屏幕的亮度
+     * @param from
+     * @param to
+     */
+    private void dimBackground(float from, float to) {
+        final Window window = getWindow();
+        ValueAnimator valueAnimator = ValueAnimator.ofFloat(from, to);
+        valueAnimator.setDuration(500);
+        valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                WindowManager.LayoutParams params = window.getAttributes();
+                params.alpha = (float) animation.getAnimatedValue();
+                window.setAttributes(params);
+            }
+        });
+        valueAnimator.start();
     }
 
     /**
