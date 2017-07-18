@@ -8,6 +8,7 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.graphics.Bitmap;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.app.NotificationCompat;
@@ -17,8 +18,10 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.caiyi.dailywork.R;
+import com.caiyi.dailywork.Rx.ObserverHelper;
 import com.caiyi.dailywork.ui.WheelView;
 
+import java.io.File;
 import java.util.Date;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener{
@@ -31,15 +34,18 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ObserverHelper.ddd();
+
         initView();
 
         openTimeService();
 
         setViewClickListeners(R.id.btn_camera, R.id.btn_span,
                 R.id.btn_toolbar, R.id.btn_floating, R.id.btn_discovery,
-                R.id.btn_broadcast, R.id.btn_wheelTime, R.id.btn_recycle,
-                R.id.btn_banner, R.id.btn_picture, R.id.btn_shape, R.id.btn_glide,
-                R.id.btn_ExpandableListView, R.id.btn_Demo);
+                R.id.btn_broadcast, R.id.btn_recycle, R.id.btn_banner, R.id.btn_picture,
+                R.id.btn_shape, R.id.btn_glide, R.id.btn_ExpandableListView, R.id.btn_Demo,
+                R.id.btn_webView);
 
     }
 
@@ -78,9 +84,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
             case R.id.btn_broadcast:
                 openActivity(CalendarActivity.class);
                 break;
-            case R.id.btn_wheelTime:
-                openActivity(WheelActivity.class);
-                break;
             case R.id.btn_recycle:
                 openActivity(RecycleActivity.class);
                 break;
@@ -101,6 +104,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
                 break;
             case R.id.btn_Demo:
                 openActivity(DemoActivity.class);
+                break;
+            case R.id.btn_webView:
+                openActivity(WebViewActivity.class);
+                break;
             default:
                 break;
         }

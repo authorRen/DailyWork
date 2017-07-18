@@ -61,13 +61,7 @@
                 android:id="@+id/btn_broadcast"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="发送广播" />
-
-            <Button
-                android:id="@+id/btn_wheelTime"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="仿ios滚轮时间" />
+                android:text="日历and屏幕亮度" />
 
             <Button
                 android:id="@+id/btn_recycle"
@@ -110,6 +104,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Demo" />
+
+            <Button
+                android:id="@+id/btn_webView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="webView" />
+
+
 
         </LinearLayout>
     </ScrollView>

@@ -1,8 +1,10 @@
 package com.caiyi.dailywork.compant;
 
-import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.os.SystemClock;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
@@ -14,6 +16,8 @@ import com.caiyi.dailywork.R;
 import com.caiyi.dailywork.fragment.SetPwdFragment;
 
 public class ToolbarActivity extends BaseActivity {
+
+    private TextView mText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,5 +91,24 @@ public class ToolbarActivity extends BaseActivity {
                 SetPwdFragment.showDialog(getSupportFragmentManager());
             }
         });
+
+        mText = (TextView) findViewById(R.id.tv_handler);
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                SystemClock.sleep(3000);
+                handler.sendEmptyMessage(0);
+            }
+        });
+
     }
+
+    Handler handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            mText.setText("world");
+        }
+    };
 }
