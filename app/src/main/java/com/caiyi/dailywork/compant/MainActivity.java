@@ -1,28 +1,13 @@
 package com.caiyi.dailywork.compant;
 
-import android.app.AlarmManager;
-import android.app.ExpandableListActivity;
-import android.app.Notification;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
-import android.graphics.Bitmap;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.app.NotificationCompat;
 import android.util.DisplayMetrics;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 import com.caiyi.dailywork.R;
 import com.caiyi.dailywork.Rx.ObserverHelper;
-import com.caiyi.dailywork.ui.WheelView;
-
-import java.io.File;
-import java.util.Date;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener{
 
@@ -88,7 +73,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
                 openActivity(RecycleActivity.class);
                 break;
             case R.id.btn_banner:
-                openActivity(BannerActivity.class);
+                openActivity(NoticeViewActivity.class);
                 break;
             case R.id.btn_picture:
                 openActivity(PictureActivity.class);

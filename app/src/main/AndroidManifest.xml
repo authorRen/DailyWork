@@ -31,7 +31,7 @@
         <activity
             android:name=".compant.RecycleActivity"/>
         <activity
-            android:name=".compant.BannerActivity"
+            android:name=".compant.NoticeViewActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".compant.PictureActivity"

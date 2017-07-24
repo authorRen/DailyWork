@@ -11,9 +11,11 @@ import android.widget.LinearLayout;
 import com.caiyi.dailywork.R;
 import com.caiyi.dailywork.adapter.HeaderAdapter;
 import com.caiyi.dailywork.data.ItemArticle;
+import com.caiyi.dailywork.ui.TextSwitchView;
 import com.facebook.drawee.backends.pipeline.Fresco;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -22,7 +24,7 @@ import java.util.TimerTask;
  * Created by RZQ on 2017/5/10.
  */
 
-public class BannerActivity extends BaseActivity {
+public class NoticeViewActivity extends BaseActivity {
 
     private static final int UPTATE_VIEWPAGER = 0;
 
@@ -37,6 +39,8 @@ public class BannerActivity extends BaseActivity {
     private ImageView[] mBottomImages;//底部只是当前页面的小圆点
 
     private Timer timer = new Timer(); //为了方便取消定时轮播，将 Timer 设为全局
+
+    private String[] resources = {"窗前明月光", "疑是地上霜", "举头望明月", "低头思故乡"};
 
     //定时轮播图片，需要在主线程里面修改UI
     private Handler mHandler = new Handler() {
@@ -70,6 +74,9 @@ public class BannerActivity extends BaseActivity {
     private void initView() {
         vpHottest = (ViewPager) findViewById(R.id.vp_banner);
         llHottestIndicator = (LinearLayout) findViewById(R.id.ll_indicator);
+        TextSwitchView tsv = (TextSwitchView) findViewById(R.id.tsv);
+        tsv.setResources(resources);
+        tsv.setTextStillTime(3000);
     }
 
     private void setUpViewPager(final List<ItemArticle> headerArticles) {
@@ -143,12 +150,12 @@ public class BannerActivity extends BaseActivity {
             List<ItemArticle> articles = new ArrayList<>();
             articles.add(
                     new ItemArticle(1123, "http://img.taodiantong.cn/v55183/infoimg/2013-07/130720115322ky.jpg"));
-//            articles.add(
-//                    new ItemArticle(1123, "http://pic30.nipic.com/20130626/8174275_085522448172_2.jpg"));
-//            articles.add(
-//                    new ItemArticle(1123, "http://pic18.nipic.com/20111215/577405_080531548148_2.jpg"));
-//            articles.add(
-//                    new ItemArticle(1123, "http://pic15.nipic.com/20110722/2912365_092519919000_2.jpg"));
+            articles.add(
+                    new ItemArticle(1123, "http://pic30.nipic.com/20130626/8174275_085522448172_2.jpg"));
+            articles.add(
+                    new ItemArticle(1123, "http://pic18.nipic.com/20111215/577405_080531548148_2.jpg"));
+            articles.add(
+                    new ItemArticle(1123, "http://pic15.nipic.com/20110722/2912365_092519919000_2.jpg"));
             return articles;
         }
 

@@ -9,4 +9,21 @@
         <attr name="epvRecycleMode" format="boolean"/>
         <attr name="epvMaxShowNum" format="integer"/>
     </declare-styleable>
+
+    <declare-styleable name="TextSwitchView">
+        <!--字体大小-->
+        <attr name="tsv_textSize" format="dimension"/>
+        <!--字体颜色-->
+        <attr name="tsv_textColor" format="color"/>
+        <!--文本最大行数-->
+        <attr name="tsv_maxLine" format="integer"/>
+        <!--文本对齐方式-->
+        <attr name="tsv_textGravity" format="integer">
+            <enum name="left" value="3"/>
+            <enum name="center" value="17"/>
+            <enum name="right" value="5"/>
+        </attr>
+        <!--图标与内容间隙-->
+        <attr name="tsv_padding" format="dimension"/>
+    </declare-styleable>
 </resources>

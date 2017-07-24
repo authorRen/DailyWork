@@ -73,7 +73,7 @@
                 android:id="@+id/btn_banner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="banner" />
+                android:text="通告" />
 
             <Button
                 android:id="@+id/btn_picture"
