@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import com.caiyi.dailywork.R;
 import com.caiyi.dailywork.Rx.ObserverHelper;
+import com.caiyi.dailywork.common.log.Logger;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener{
 
@@ -20,7 +21,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ObserverHelper.ddd();
+
 
         initView();
 
